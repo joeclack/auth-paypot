@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8" />
+    <title>Payday</title>
     <script>
-      window.location.replace("payday://auth" + window.location.search);
+      var params = new URLSearchParams(window.location.search);
+      if (params.has("code")) {
+        window.location.replace("payday://auth" + window.location.search);
+      }
     </script>
   </head>
   <body>
-    Redirecting to Payday…
+    <p>Confirming with Monzo&hellip;</p>
+    <p>Please approve the request in your Monzo app.</p>
   </body>
 </html>
